@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#sobre" style="margin-left: auto;">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contactos">Contactos</a>
+            <a href="#" id="toggle-tema" style="margin-left: auto;"><i class="fa-solid fa-sun"></i></a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre">
+            <h1>Pedro Pereira</h1>
+            <h1>2º ano VAM</h1>
+        </section>
+        <p style="text-align: center;">Sou estudante de videojogos na Universidade Lusófona do Porto, e estes são os
+            meus projetos 3D</p>
+        <section id="projetos">
+            <h2>Projetos</h2>
+
+            <div class="projetos-container">
+                <div class="card card-projeto" style="background: url('./img/scp/lab.gif');" onclick="AbrirProjeto('scp')">
+                    <span>
+                        <h3>Projeto 1</h3>
+                        <p>SCP Lab</p>
+                    </span>
+                </div>
+
+                <div class="card card-projeto" style="background: url('./img/metro/bridge_small.gif');" onclick="AbrirProjeto('metro')">
+                    <span>
+                        <h3>Projeto 2</h3>
+                        <p>Metro Night</p>
+                    </span>
+                </div>
+
+                <div class="card card-projeto" style="background: url('./img/arab/carro_arabias.png');" onclick="AbrirProjeto('arab')">
+                    <span>
+                        <h3>Projeto 3</h3>
+                        <p>Arabia Map</p>
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="contacto">
+            <h2>Contactos</h2>
+            <div class="card card-contacto">
+                <div class="card-contacto-info-col">
+                    <span><i class="card-contacto-icone fa-solid fa-phone"></i>Telemóvel: 912 312 391</span>
+                    <span><i class="card-contacto-icone fa-brands fa-github"></i>GitHub: github</span>
+                </div>
+                <div class="card-contacto-info-col">
+                    <span><i class="card-contacto-icone fa-solid fa-envelope"></i>Email: a@a.com</span>
+                    <span><i class="card-contacto-icone fa-brands fa-discord"></i></i>Discord: pedro</span>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Pedro Pereira</p>
+    </footer>
+
+    <div class="modal">
+        <div class="modal-scroller">
+            <div id="projeto_scp" class="modal-content">
+                <img class="modal-image" style="background: url('./img/scp/lab_big.gif');" />
+                <img class="modal-image" style="background: url('./img/scp/lab_2.png');" />
+                <img class="modal-image" style="background: url('./img/scp/lab_3.png');" />
+                <img class="modal-image" style="background: url('./img/scp/lab_open.gif');" />
+            </div>
+            <div id="projeto_metro" class="modal-content">
+                <img class="modal-image" style="background: url('./img/metro/NCMM_final.png');" />
+                <img class="modal-image" style="background: url('./img/metro/NCMM_alternative1.png');" />
+                <img class="modal-image" style="background: url('./img/metro/NCMM_traseiro_alternativo_dia.png');" />
+                <img class="modal-image" style="background: url('./img/metro/NCMM_traseiro_alternativo_1.png');" />
+                <img class="modal-image" style="background: url('./img/metro/NCMM_lateral_alternativo_dia.png');" />
+                <img class="modal-image" style="background: url('./img/metro/NCMM_lateral_alternativo_1.png');" />
+                <img class="modal-image" style="background: url('./img/metro/bridge.gif');" />
+            </div>
+            <div id="projeto_arab" class="modal-content">
+                <img class="modal-image" style="background: url('./img/arab/carro_arrabias.png');" />
+                <img class="modal-image" style="background: url('./img/arab/rpg.png');" />
+            </div>
+        </div>
+        <div class="modal-scroller-actions">
+            <div class="modal-scroller-background-go-back"></div>
+            <div class="modal-scroller-btns">
+                <div class="btn-modal-scroller" id="btn-modal-scroller-prev"><i class="fa-solid fa-caret-left"></i></div>
+                <div class="btn-modal-scroller" id="btn-modal-scroller-next"><i class="fa-solid fa-caret-right"></i></div>
+            </div>
+            <div class="modal-scroller-background-go-back"></div>
+        </div>
+    </div>
+
+</body>
+<script src="./script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</html>
