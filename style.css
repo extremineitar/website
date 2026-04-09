@@ -1,12 +1,39 @@
+/* #region scrollbars */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+/* #endregion */
+
 .light-mode {
     --color-background: #f5f5f5;
     --color-primary: #c757d1;
+    --color-secondary: #71d47f;
     --color-card: #eeeeee;
 }
 
 .dark-mode {
     --color-background: #222222;
     --color-primary: #71d47f;
+    --color-secondary: #c757d1;
     --color-card: #292929;
 }
 
@@ -36,7 +63,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 nav a {
@@ -52,8 +79,15 @@ nav a:hover {
 
 section {
     padding: 2rem;
-    max-width: 30rem;
     margin: auto;
+}
+
+#sobre {
+    max-width: 30rem;
+}
+
+#contactos {
+    width: fit-content;
 }
 
 h1,
@@ -78,6 +112,60 @@ footer {
     margin-top: auto;
 }
 
+.container-paginas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: overlay;
+    overflow-x: hidden;
+}
+
+.pagina {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+#pagina-inicial {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#pagina-jogo {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.switch #pagina-inicial {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.switch #pagina-jogo {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.paragrafo {
+    text-align: center;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+#loader {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 /* #region home */
 #projetos {
     max-width: none;
@@ -100,12 +188,6 @@ footer {
     align-items: center;
 }
 
-/* .card-projeto span {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 1rem;
-    border-radius: 10px;
-}
- */
 .card-projeto:hover {
     cursor: pointer;
     transform: scale(1.05);
@@ -117,7 +199,15 @@ footer {
 
 .card-contacto {
     justify-content: space-between;
+    gap: 3rem;
+}
 
+.card-contacto a {
+    color: var(--color-primary);
+}
+
+.card-contacto a:hover {
+    color: var(--color-secondary);
 }
 
 .card-contacto-info-col {
@@ -165,6 +255,7 @@ footer {
 
     .card-contacto {
         flex-direction: column;
+        gap: 0;
     }
 
     .card-contacto-info-col {
@@ -253,4 +344,20 @@ footer {
     display: flex !important;
 }
 
+/* #endregion */
+
+/* #region pagina jogo */
+#imagem-jogo {
+    display: flex;
+    justify-content: center;
+}
+
+.card-primary {
+    background-color: var(--color-primary);
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    color: var(--color-background)
+}
 /* #endregion */

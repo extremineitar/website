@@ -10,67 +10,97 @@
 </head>
 
 <body>
-
     <header>
         <nav>
-            <a href="#sobre" style="margin-left: auto;">Sobre</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#contactos">Contactos</a>
-            <a href="#" id="toggle-tema" style="margin-left: auto;"><i class="fa-solid fa-sun"></i></a>
+            <a><i class="fa-fw"></i></a> <!-- elemento escondido só para o flex funcionar -->
+            <div id="nav-items">
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contactos">Contactos</a>
+                <a href="#" onclick="AbrirPaginaJogo()">O Meu Jogo Favorito</a>
+            </div>
+            <a href="#" id="toggle-tema"><i class="fa-solid fa-sun"></i></a>
         </nav>
     </header>
+    <div class="container-paginas">
+        <div class="pagina show-pagina" id="pagina-inicial">
+            <main>
+                <section id="sobre">
+                    <h1>Pedro Pereira</h1>
+                    <h1>2º ano VAM</h1>
+                </section>
 
-    <main>
-        <section id="sobre">
-            <h1>Pedro Pereira</h1>
-            <h1>2º ano VAM</h1>
-        </section>
-        <p style="text-align: center; padding:2rem">Sou estudante de videojogos na Universidade Lusófona do Porto, e estes são os
-            meus projetos 3D</p>
-        <section id="projetos">
-            <h2>Projetos</h2>
+                <p class="paragrafo">Sou estudante de videojogos na Universidade Lusófona do Porto, e estes são os meus projetos 3D</p>
 
-            <div class="projetos-container">
-                <div class="card card-projeto" style="background: url('./img/scp/lab.gif');" onclick="AbrirProjeto('scp')">
-                    <span>
-                        <h3>Projeto 1</h3>
-                        <p>SCP Lab</p>
-                    </span>
+                <section id="projetos">
+                    <h2>Projetos</h2>
+                    <div class="projetos-container">
+                        <div class="card card-projeto" style="background: url('./img/scp/lab.gif');" onclick="AbrirProjeto('scp')">
+                            <span>
+                                <h3>Projeto 1</h3>
+                                <p>SCP Lab</p>
+                            </span>
+                        </div>
+
+                        <div class="card card-projeto" style="background: url('./img/metro/bridge_small.gif');" onclick="AbrirProjeto('metro')">
+                            <span>
+                                <h3>Projeto 2</h3>
+                                <p>Metro Night</p>
+                            </span>
+                        </div>
+
+                        <div class="card card-projeto" style="background: url('./img/arab/carro_arabias.png');" onclick="AbrirProjeto('arab')">
+                            <span>
+                                <h3>Projeto 3</h3>
+                                <p>Arabia Map</p>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="contactos">
+                    <h2>Contactos</h2>
+                    <div class="card card-contacto">
+                        <div class="card-contacto-info-col">
+                            <span><i class="card-contacto-icone fa-solid fa-phone"></i>Telemóvel: 912 312 391</span>
+                            <span><i class="card-contacto-icone fa-brands fa-github"></i>GitHub: <a href="https://github.com/extremineitar" target="_blank">extremineitar</a></span>
+                        </div>
+                        <div class="card-contacto-info-col">
+                            <span><i class="card-contacto-icone fa-solid fa-envelope"></i>Email: <a href="mailto:a@a.com">pedro2006@gmail.com</a></span>
+                            <span><i class="card-contacto-icone fa-brands fa-discord"></i></i>Discord: <a href="discord://discord.com/users/1454862321468964864">Xx_Pedro_xX</a></span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <div class="pagina" id="pagina-jogo">
+            <main>
+                <section>
+                    <h1>Cry of Fear</h1>
+                </section>
+
+                <p class="paragrafo" style="margin-bottom: 3rem;">Este é o meu jogo favorito</p>
+
+                <section>
+                    <div id="imagem-jogo">
+                        <img id="imagem-jogo" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/223710/header.jpg?t=1643567513"/>
+                    </div>
+                </section>
+                <div style="display: flex; width: 100%; justify-content: center">
+                    <div class="card-primary"><i class="fa-solid fa-clock card-contacto-icone"></i>Horas jogadas: <b id="horas-jogadas"></b></div>
                 </div>
 
-                <div class="card card-projeto" style="background: url('./img/metro/bridge_small.gif');" onclick="AbrirProjeto('metro')">
-                    <span>
-                        <h3>Projeto 2</h3>
-                        <p>Metro Night</p>
-                    </span>
-                </div>
-
-                <div class="card card-projeto" style="background: url('./img/arab/carro_arabias.png');" onclick="AbrirProjeto('arab')">
-                    <span>
-                        <h3>Projeto 3</h3>
-                        <p>Arabia Map</p>
-                    </span>
-                </div>
-
-            </div>
-
-        </section>
-
-        <section id="contactos">
-            <h2>Contactos</h2>
-            <div class="card card-contacto">
-                <div class="card-contacto-info-col">
-                    <span><i class="card-contacto-icone fa-solid fa-phone"></i>Telemóvel: 912 312 391</span>
-                    <span><i class="card-contacto-icone fa-brands fa-github"></i>GitHub: github</span>
-                </div>
-                <div class="card-contacto-info-col">
-                    <span><i class="card-contacto-icone fa-solid fa-envelope"></i>Email: a@a.com</span>
-                    <span><i class="card-contacto-icone fa-brands fa-discord"></i></i>Discord: pedro</span>
-                </div>
-
-            </div>
-        </section>
-    </main>
+                <section style=" width: fit-content;">
+                    <div class="card" style="flex-direction: column;">
+                        <h2>Descrição na página da steam</h2>
+                        <p class="paragrafo" id="descricao-jogo"></p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
 
     <footer>
         <p>© 2026 Pedro Pereira</p>
@@ -101,17 +131,21 @@
         <div class="modal-scroller-actions">
             <div class="modal-scroller-background-go-back"></div>
             <div class="modal-scroller-btns">
-                <div class="btn-modal-scroller" id="btn-modal-scroller-prev"><i class="fa-solid fa-caret-left"></i></div>
-                <div class="btn-modal-scroller" id="btn-modal-scroller-next"><i class="fa-solid fa-caret-right"></i></div>
+                <div class="btn-modal-scroller" id="btn-modal-scroller-prev"><i class="fa-solid fa-caret-left"></i>
+                </div>
+                <div class="btn-modal-scroller" id="btn-modal-scroller-next"><i class="fa-solid fa-caret-right"></i>
+                </div>
             </div>
             <div class="modal-scroller-background-go-back"></div>
         </div>
     </div>
 
+    <div id="loader">
+        <i class="fas fa-2x fa-sync fa-spin"></i>
+    </div>
+
 </body>
 <script src="./script.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </html>
